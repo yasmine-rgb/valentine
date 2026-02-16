@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- iPhone viewport + app mode -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="💖 Valentine">
+<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png">
+
+<title>Happy Valentine’s Day ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* SLIDES */
+.slide {
+  width: 100vw;
+  height: 100svh;
+  position: absolute;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.slide.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* TEXT */
+h1 {
+  font-size: clamp(26px, 6vw, 42px);
+}
+h2 {
+  font-size: clamp(22px, 5vw, 34px);
+}
+p {
+  font-size: clamp(15px, 4vw, 18px);
+}
+
+/* BUTTONS */
+.next, #heartBtn {
+  padding: 14px 26px;
+  background: white;
+  color: #ff3366;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  touch-action: manipulation;
+  margin-top: 20px;
+}
+
+/* SLIDE 1 */
+#slide1 {
+  background: #c4002f;
+  color: white;
+}
+
+.kiss {
+  position: absolute;
+  font-size: 30px;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-200px); opacity: 0; }
+}
+
+/* SLIDE 2 */
+#slide2 {
+  background: linear-gradient(#ff5f8a, #ffb6c1);
+  color: white;
+}
+
+.photo {
+  width: min(70vw, 220px);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+.xoxo {
+  position: absolute;
+  font-size: 60px;
+  bottom: 120px;
+  transform: rotate(-15deg);
+}
+
+/* SLIDE 3 */
+#slide3 {
+  background: #ffccd5;
+}
+
+.letter {
+  background: #fdf1dc;
+  width: 100%;
+  max-width: 500px;
+  max-height: 75svh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  color: #5a2a2a;
+  font-family: 'Georgia', serif;
+}
+
+/* SLIDE 4 */
+#slide4 {
+  background: linear-gradient(#ff8fab, #ffd6e0);
+  color: white;
+}
+
+.heart {
+  position: absolute;
+  font-size: 24px;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-300px); opacity: 0; }
+}
+
+#countdown {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+/* PORTRAIT LOCK */
+@media (orientation: landscape) {
+  body::before {
+    content: "💖 Please rotate your phone 💖";
+    position: fixed;
+    inset: 0;
+    background: #ff8fab;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 9999;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide active" id="slide1">
+  <h1>Happy Valentine’s Day Babes ❤️</h1>
+  <div class="next" onclick="nextSlide()">Click here →</div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="slide2">
+  <h2>You + Me &lt;3</h2>
+  <img src="https://cdn.image.my/images/P6amN1cXnItL.jpg" class="photo">
+  <div class="xoxo">XOXO</div>
+  <div class="next" onclick="nextSlide()">Click here →</div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" id="slide3">
+  <div class="letter">
+    <h2>💕To My Big Boy💕</h2>
+    <p>
+      Dearest Yassin,<br><br>
+      I'm writing this letter to show you how much I appreciate you. Truly.<br><br>
+      Even if it doesn’t always seem like it, trust me — I really do.  
+      I appreciate your presence, your love, and the way you make me feel safe. ❤️<br><br>
+      We’ve only known each other for a few months, but it genuinely feels like forever.<br><br>
+      You’re one of the most beautiful, genuine, kind human beings I’ve ever met.  
+      Soft-spoken, gentle, patient, warmhearted… and yes, your big muscles too 😌💪<br><br>
+      I pray you get everything you wish for in life and that you’re always happy and at peace.<br><br>
+      I love you, my handsome baby boy.  
+      Happy Valentine’s Day 💕
+    </p>
+  </div>
+  <div class="next" onclick="nextSlide()">Click here →</div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide" id="slide4">
+  <h2>
+    For my big boy 💖<br><br>
+    Roses are red, violets are blue,<br>
+    I'm not a poet but I'd rhyme with you 😉❤️<br><br>
+    I miss you and I can’t wait to see you again 💕
+  </h2>
+
+  <button id="heartBtn">Tap for infinite hearts &lt;3</button>
+  <div id="countdown">⏳ Counting the days…</div>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+
+function nextSlide() {
+  if (current < slides.length - 1) {
+    slides[current].classList.remove('active');
+    current++;
+    slides[current].classList.add('active');
+  }
+}
+
+/* KISSES */
+setInterval(() => {
+  if (current === 0) {
+    const kiss = document.createElement('div');
+    kiss.className = 'kiss';
+    kiss.innerText = '💋';
+    kiss.style.left = Math.random() * window.innerWidth + 'px';
+    kiss.style.top = window.innerHeight + 'px';
+    document.body.appendChild(kiss);
+    setTimeout(() => kiss.remove(), 6000);
+  }
+}, 600);
+
+/* HEARTS */
+let infiniteHearts = false;
+document.getElementById('heartBtn').addEventListener('click', (e) => {
+  e.stopPropagation();
+  infiniteHearts = true;
+});
+
+document.addEventListener('click', (e) => {
+  if (current === 3 && infiniteHearts) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerText = '❤️';
+    heart.style.left = e.clientX + 'px';
+    heart.style.top = e.clientY + 'px';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 4000);
+  }
+});
+
+/* COUNTDOWN */
+const targetDate = new Date("2026-03-26T00:00:00").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+  document.getElementById("countdown").innerHTML =
+    diff > 0
+      ? `⏳ ${Math.floor(diff / (1000 * 60 * 60 * 24))} days until I see you again 💕`
+      : "💖 TODAY IS THE DAY 💖";
+}, 1000);
+</script>
+
+</body>
+</html>
